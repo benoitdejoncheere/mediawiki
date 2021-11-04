@@ -1,1 +1,18 @@
-/etc/ansible/mediawiki.yml
+---
+
+# Installation de Mediawiki
+
+- hosts: centos
+  become: true
+  vars:
+    mysql_root_password: "stage"
+  tasks:
+  roles:
+    - install
+      #  - user
+      #  - mariadb
+
+...            
+
+
+
