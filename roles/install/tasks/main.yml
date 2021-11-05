@@ -1,0 +1,22 @@
+---
+- name: installation packages
+  yum:
+    name:
+      - httpd
+      - php
+      - php-mysql
+      - php-gd
+      - php-xml
+      - php-intl
+      - mariadb-server
+    state: latest
+    update_cache: yes
+
+- name: start services
+  services:
+    name:
+      - httpd
+      - mysql
+    state: enabled
+
+...
